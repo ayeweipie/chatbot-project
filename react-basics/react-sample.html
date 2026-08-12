@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>React Basics</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+
+        function BestCoffee({ name, product, rate})
+          {
+            return
+              (
+                <>
+                  <p> {name} </p>
+                  <p>Product: {product}</p>
+                  <p>rate: {rate}</p>
+                  
+                </>
+              )
+          }
+
+        function App()
+          {
+              return
+                (
+                  <>
+                    <BestCoffee 
+                      name="Never bean CoffeeShop"
+                      product="spanish latte"
+                      rate="5.00"
+                    />
+                    <BestCoffee
+                      name="Palpitate CoffeeShop" 
+                      product="Kapemocha"
+                      rate="4.85"
+                    />
+
+                    <BestCoffee
+                      name="Solstice CoffeeShop" 
+                      product="Matcha"
+                      rate="4.98"
+                    />
+                  </>
+                )
+          }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App />);
+    </script>
+  </body>
+</html>

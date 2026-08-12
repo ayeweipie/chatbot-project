@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Chatbot</title>
+  </head>
+  <body>
+    <div class="js-container"></div>
+
+    <script src="https://unpkg.com/supersimpledev/react.js"></script>
+    <script src="https://unpkg.com/supersimpledev/react-dom.js"></script>
+
+    <script src="https://unpkg.com/supersimpledev/babel.js"></script>
+    <script type="text/babel">
+
+     function ChatInput (){
+        return (
+            <>
+            <input placeholder="Type a Message"/>
+            <button>Send</button>
+            </>
+        );
+     }
+
+
+        function ChatMessage ({text, sender} ){
+            return(
+                <div>
+                {sender ==='assistant' && <img src="assistant.jpeg.webp" width="60"/>}
+                {text}
+                {sender ==='user' && <img src="user.jpeg.webp"width="60"/>}
+                </div>
+            );
+        }
+     function App (){
+        return(
+            <>
+            <ChatInput/>
+            <ChatMessage 
+                text="anong point?? ang point sinaktan mo ko" 
+                sender="user"
+            />
+            <ChatMessage 
+                text="niloko mo ko at hanggang ngayon niloloko mo ako"
+                sender="assistant"
+            />
+            <ChatMessage 
+                text="dalawang taon mo akong pinaniwala na may iba" 
+                sender="user"
+            />
+            <ChatMessage 
+                text="binitbit ko yun sayo dalawang taon gabi gabi iniisip ko kung bakit"
+                sender="assistant"
+            />
+            </>
+        );
+     }
+
+      const container = document.querySelector('.js-container');
+      ReactDOM.createRoot(container).render(<App/>);
+    </script>
+  </body>
+</html>
